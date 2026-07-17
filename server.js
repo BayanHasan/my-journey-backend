@@ -7,7 +7,7 @@ const authRoutes = require('./src/routes/authRoutes');
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['https://my-journey-lemon.vercel.app', 'http://localhost:5173'],
   credentials: true
 }));
 app.use(express.json());
