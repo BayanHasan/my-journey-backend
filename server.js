@@ -9,7 +9,11 @@ const bookingRoutes = require('./src/routes/bookingRoutes');
 const app = express();
 
 app.use(cors({
-  origin: ['https://my-journey-lemon.vercel.app', 'http://localhost:5173'],
+  origin: [
+    'https://my-journey-lemon.vercel.app',
+    'https://my-journey-backend-beta.vercel.app',
+    'http://localhost:5173'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
