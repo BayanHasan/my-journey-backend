@@ -35,8 +35,7 @@ const getUserBookings = async (req, res) => {
     );
     res.json(bookings.rows);
   } catch (err) {
-    res.status(500).json({ message: 'Server error', error: err.message });
-  }
+res.status(500).json({ message: 'Server error', error: err.message, stack: err.stack });  }
 };
 
 module.exports = { createBooking, getUserBookings };

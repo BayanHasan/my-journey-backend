@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const pool = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes");
 const hotelRoutes = require("./src/routes/hotelRoutes");
 const bookingRoutes = require("./src/routes/bookingRoutes");
@@ -17,10 +16,12 @@ app.use(cors({
 
 app.use(express.json());
 
+// ربط المسارات
 app.use("/api/auth", authRoutes);
 app.use("/api/hotels", hotelRoutes);
 app.use("/api/bookings", bookingRoutes);
 
+// مسار فحص عمل السيرفر
 app.get("/", (req, res) => {
   res.json({ message: "My Journey API is running! 🚀" });
 });
